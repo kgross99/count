@@ -1,0 +1,64 @@
+﻿****************
+* Project Number 2 Linked list
+* Class CS-253
+* Date 3-17-14
+* Your name Kim Gross
+**************** 
+
+PROJECT OVERVIEW:
+
+In this project I had to create a doubly linked list complete with unit testing.  The doubly linked list is a very common data structor used in computer science. 
+
+
+INCLUDED FILES:
+
+ README  this file
+common.h   common header file
+Job.h   header file for job class
+List.h header file for list class
+Node.h header file for node class
+test.sh   a shell script to run RandomTestList with multiple seeds
+List.c the c source code for the doubly linked list
+Job.c  the c source code for the job object
+Node.c the c source code for the node object
+RandomTestList.c the source code for the random test file
+SimpleTest.c the source code for the simple test file
+UnitTestList.c  unit test source file
+Makefile   a make file for building the project.
+Doxygen-config,  The config file for doxygen documentation creator
+
+BUILDING AND RUNNING:
+
+To build the all the programs from the directory you have all the files in, just type in 
+make
+
+Then to run the files you type in 
+./filename of the test file you want to run.
+
+
+
+ 
+
+PROJECT DESIGN:
+
+This project creates a doubly linked list and many test files to make sure the linked list works correctly.   The list is a very common structure so there was more time spent with the testing than actually creating the list itself. 
+ 
+PROJECT DEVELOPMENT AND TESTING:
+
+The project was started with creating the simple linked list.
+
+As I created each part of the linked list I would create a unit test for that function to run against the 
+list to make sure it was working correctly
+
+ 
+EXTRA CREDIT:
+I ran the valgrind tool on this.   This is what took the most time for this project fixing all of the
+ memory leaks.  Now with the RandomTestList valgrind shows now leaks. 
+
+SVN
+
+After I fixed (I hope) all of the errors that came back from my professor I added the doublylinkedlist 
+to subversion control.  Since added it into subversion I have made a few other fixes to it and submitted
+ them and then checked out all the code on my laptop.
+
+
