@@ -24,8 +24,13 @@ return newWordObj;
 
 unsigned long int hashcode(const void * g)
  {
+	const WordObjPtr temp=(const WordObjPtr)g;
+
+
+
 	char * word;
-	word =(char *)g;
+	word=temp->word;
+
 unsigned long int hashval;
 for (hashval = 0; *word !='\0'; word++)
 hashval = *word + 31 * hashval;
@@ -40,7 +45,7 @@ WordObjPtr tempWordObj=(WordObjPtr) g;
 
 char *temp;
 temp=(char *)malloc(sizeof(char)*strlen(tempWordObj->word)+1+22);
-sprintf(temp, "%s %lu",tempWordObj->word,tempWordObj->frequency);
+sprintf(temp, "%s %l",tempWordObj->word,tempWordObj->frequency);
 return temp;
 
 

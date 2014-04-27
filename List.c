@@ -221,7 +221,7 @@ NodePtr search(ListPtr list, const void * o) {
 		return NULL ;
 	}
 	tempNode = list->head;
-	while (tempNode->next) {
+	while (tempNode) {
 
 
 		if (list->compareTo(( void *)o,( void *)tempNode->obj)==0) {
