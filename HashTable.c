@@ -28,7 +28,7 @@ HashTablePtr createTable(const int tableSize,
 	hashTable->compareTo=compareTo;
 	hashTable->toString=toString;
 	hashTable->numElements=0;
-	printf("set all struct values\n");
+
 	hashTable->table=calloc(tableSize,sizeof(ListPtr));
 	int i;
 	for (i=0;i<tableSize;i++){
@@ -67,16 +67,15 @@ void insert(HashTablePtr table, const void * p){
 
 	unsigned long int objecthash, tableslot;
 	objecthash=checkTable->hashcode(p);
-	printf("hash %lu\n",objecthash);
+
 	tableslot=hashfunc(checkTable, objecthash);
-	printf("hash %lu\n",tableslot);
+
 	ListPtr hashlist=checkTable->table[tableslot];
 	NodePtr tempnode=createNode(p);
-	printf("create node to add\n");
+
 	addAtFront(hashlist, tempnode);
-	printf("ran add at front\n");
-	//printf("printing table!\n");
-	//printTable(table);
+
+
 
 }
 void *delete(HashTablePtr table, const void * p){
@@ -110,7 +109,7 @@ void printTable(const HashTablePtr table){
 
 	int i;
 	for (i=0;i<table->tableSize;i++){
-	  printf("trying to print list for slot %d\n",i);
+
 	  printList(table->table[i]);
 	}
 }

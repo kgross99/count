@@ -267,11 +267,11 @@ void printList(const ListPtr list)
 {
   if (list) {
     unsigned int address = (unsigned int)list->head;
-    printf("printing at 0x%08x\n", address);
+
     print(list->head, (void *)list->toString);
   }
   else {
-    printf("List is null\n");
+   // printf("List is null\n");// used for troubleshooting
   }
 }
 
