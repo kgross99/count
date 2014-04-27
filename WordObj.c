@@ -25,11 +25,12 @@ return newWordObj;
 unsigned long int hashcode(const void * g)
  {
 	char * word;
-	word =(char *)g;
-unsigned long int hashval;
-for (hashval = 0; *word !='\0'; word++)
-hashval = *word + 31 * hashval;
-return hashval;
+	const WordObjPtr temp = (const WordObjPtr)g;
+	word = temp->word;
+	unsigned long int hashval;
+	for (hashval = 0; *word !='\0'; word++)
+	  hashval = *word + 31 * hashval;
+	return hashval;
  }
 
 
@@ -60,7 +61,7 @@ void freeWordObj(const void *g){
 
 
 int compareTo(const void * g, const void * k){
-WordObjPtr obj1=(WordObjPtr)g;
-WordObjPtr obj2=(WordObjPtr)k;
-return strcmp(obj1->word, obj2->word);
+  WordObjPtr obj1=(WordObjPtr)g;
+  WordObjPtr obj2=(WordObjPtr)k;
+  return strcmp(obj1->word, obj2->word);
 }

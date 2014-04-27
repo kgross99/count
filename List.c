@@ -221,9 +221,11 @@ NodePtr search(ListPtr list, const void * o) {
 		return NULL ;
 	}
 	tempNode = list->head;
-	while (tempNode->next) {
+	while (tempNode) {
 
-
+	  if ( (o == NULL) || (tempNode->obj == NULL) ) {
+	    printf("o or tempNode->obj is null\n");
+	  }
 		if (list->compareTo(( void *)o,( void *)tempNode->obj)==0) {
 			return tempNode;
 
@@ -263,7 +265,14 @@ void reverseList(ListPtr L) {
 
 void printList(const ListPtr list)
 {
-	if (list) print(list->head, (void *)list->toString);
+  if (list) {
+    unsigned int address = (unsigned int)list->head;
+    printf("printing at 0x%08x\n", address);
+    print(list->head, (void *)list->toString);
+  }
+  else {
+    printf("List is null\n");
+  }
 }
 
 static void print(const NodePtr node, char * (*toString)(const void *))
