@@ -10,7 +10,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <List.h>
+#include "List.h"
+#include "Node.h"
+#include "WordObj.h"
 
 typedef struct hashTable HashTable;
 typedef struct hashTable * HashTablePtr;
